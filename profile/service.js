@@ -6,9 +6,12 @@ module.exports = (app) => {
 
   app.get("/profile", findAllProfile);
 
+  const findProfileById = (req, res) =>
+    dao.findProfileById(req.params.id).then((profile) => res.json(profile));
+  app.get("/profile/:id", findProfileById);
+
   const deleteProfile = (req, res) =>
     dao.deleteProfile(req.params.id).then((status) => res.send(status));
-
   app.delete("/profile/:id", deleteProfile);
 
   const createProfile = (req, res) =>

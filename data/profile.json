@@ -3,14 +3,12 @@
     "_id": "11",
     "email": "junhopark9608@gmail.com",
     "name": "Junho Park",
-    "date": "2020",
     "role": 1
   },
   {
     "_id": "12",
     "email": "kathysha@gmail.com",
     "name": "Kathy Sha",
-    "date": "2020",
     "role": 1
   }
 ]
