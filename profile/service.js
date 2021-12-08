@@ -1,5 +1,4 @@
 const dao = require("./dao");
-
 module.exports = (app) => {
   const findAllProfile = (req, res) =>
     dao.findAllProfile().then((profile) => res.json(profile));
