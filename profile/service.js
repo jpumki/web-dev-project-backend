@@ -25,4 +25,12 @@ module.exports = (app) => {
       .updateProfile(req.params.id, req.body)
       .then((status) => res.send(status));
   app.put("/profile/:id", updateProfile);
+
+  const addMovie = (req, res) => {
+    const updateProfile = req.body;
+    dao
+      .addMovie(req.params.id, updateProfile)
+      .then((status) => res.send(status));
+  };
+  app.put("/profile/:id/movie", addMovie);
 };

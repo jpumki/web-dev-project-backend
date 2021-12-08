@@ -5,6 +5,9 @@ const schema = mongoose.Schema(
     email: String,
     name: String,
     role: Number,
+    date: { type: Date, defaultValue: Date.now },
+    friendList: { type: Array, default: [] },
+    movieList: { type: Array, default: [] },
   },
   { collection: "profile", versionKey: false }
 );
