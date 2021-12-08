@@ -11,7 +11,7 @@ const createProfile = (profile) => model.create(profile);
 const updateProfile = (id, profile) =>
   model.updateOne({ _id: id }, { $set: profile });
 
-const addMovie = (id, profile) =>
+const handleMovie = (id, profile) =>
   model.updateOne({ _id: id }, { $set: profile });
 
 module.exports = {
@@ -20,5 +20,5 @@ module.exports = {
   deleteProfile,
   createProfile,
   updateProfile,
-  addMovie,
+  handleMovie,
 };
