@@ -6,6 +6,6 @@ const schema = mongoose.Schema(
     name: String,
     role: Number,
   },
-  { collection: "profile" }
+  { collection: "profile", versionKey: false }
 );
 module.exports = schema;
