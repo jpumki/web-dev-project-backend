@@ -3,7 +3,6 @@ const dao = require("./dao");
 module.exports = (app) => {
   const findAllProfile = (req, res) =>
     dao.findAllProfile().then((profile) => res.json(profile));
-
   app.get("/profile", findAllProfile);
 
   const findProfileById = (req, res) =>
@@ -14,7 +13,7 @@ module.exports = (app) => {
     dao.deleteProfile(req.params.id).then((status) => res.send(status));
   app.delete("/profile/:id", deleteProfile);
 
-  const createProfile = (req, res) => { 
+  const createProfile = (req, res) => {
     dao
       .createProfile(req.body)
       .then((insertedProfile) => res.json(insertedProfile));
@@ -25,6 +24,5 @@ module.exports = (app) => {
     dao
       .updateProfile(req.params.id, req.body)
       .then((status) => res.send(status));
-
   app.put("/profile/:id", updateProfile);
 };
