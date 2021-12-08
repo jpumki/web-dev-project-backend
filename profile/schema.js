@@ -5,7 +5,7 @@ const schema = mongoose.Schema(
     email: String,
     name: String,
     role: Number,
-    date: { type: Date, defaultValue: Date.now },
+    date: { type: Date, default: Date.now() },
     followers: { type: Array, default: [] },
     followings: { type: Array, default: [] },
     movieList: { type: Array, default: [] },
