@@ -6,7 +6,8 @@ const schema = mongoose.Schema(
     name: String,
     role: Number,
     date: { type: Date, defaultValue: Date.now },
-    friendList: { type: Array, default: [] },
+    followers: { type: Array, default: [] },
+    followings: { type: Array, default: [] },
     movieList: { type: Array, default: [] },
   },
   { collection: "profile", versionKey: false }

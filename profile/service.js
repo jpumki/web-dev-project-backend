@@ -33,4 +33,20 @@ module.exports = (app) => {
       .then((status) => res.send(status));
   };
   app.put("/profile/:id/movie", handleFilm);
+
+  const handleFollower = (req, res) => {
+    const updateProfile = req.body;
+    dao
+      .handleFollower(req.params.id, updateProfile)
+      .then((status) => res.send(status));
+  };
+  app.put("/profile/:id/follower", handleFollower);
+
+  const handleFollowing = (req, res) => {
+    const updateProfile = req.body;
+    dao
+      .handleFollowing(req.params.id, updateProfile)
+      .then((status) => res.send(status));
+  };
+  app.put("/profile/:id/following", handleFollowing);
 };
