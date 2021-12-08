@@ -14,10 +14,11 @@ module.exports = (app) => {
     dao.deleteProfile(req.params.id).then((status) => res.send(status));
   app.delete("/profile/:id", deleteProfile);
 
-  const createProfile = (req, res) =>
+  const createProfile = (req, res) => { 
     dao
       .createProfile(req.body)
       .then((insertedProfile) => res.json(insertedProfile));
+  };
   app.post("/profile", createProfile);
 
   const updateProfile = (req, res) =>
