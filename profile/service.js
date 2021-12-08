@@ -26,11 +26,11 @@ module.exports = (app) => {
       .then((status) => res.send(status));
   app.put("/profile/:id", updateProfile);
 
-  const handleMovie = (req, res) => {
+  const handleFilm = (req, res) => {
     const updateProfile = req.body;
     dao
-      .handleMovie(req.params.id, updateProfile)
+      .handleFilm(req.params.id, updateProfile)
       .then((status) => res.send(status));
   };
-  app.put("/profile/:id/movie", handleMovie);
+  app.put("/profile/:id/movie", handleFilm);
 };
