@@ -19,10 +19,12 @@ module.exports = (app) => {
   };
   app.post("/profile", createProfile);
 
-  const updateProfile = (req, res) =>
+  const updateProfile = (req, res) => {
+    const editProfile = req.body;
     dao
-      .updateProfile(req.params.id, req.body)
+      .updateProfile(req.params.id, editProfile)
       .then((status) => res.send(status));
+  };
   app.put("/profile/:id", updateProfile);
 
   const handleFilm = (req, res) => {
