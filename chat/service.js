@@ -19,11 +19,10 @@ module.exports = (app) => {
   app.post("/chat", createChat);
 
   const updateChat = (req, res) => {
-    const editProfile = req.body;
+    const updateChat = req.body;
     dao
-      .updateChat(req.params.id, editProfile)
+      .updateChat(req.params.id, updateChat)
       .then((status) => res.send(status));
   };
-
   app.put("/chat/:id", updateChat);
 };
