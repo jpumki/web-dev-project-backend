@@ -20,6 +20,9 @@ const handleFollower = (id, profile) =>
 const handleFollowing = (id, profile) =>
   model.updateOne({ _id: id }, { $set: profile });
 
+const handleChat = (id, profile) =>
+  model.updateOne({ _id: id }, { $set: profile });
+
 module.exports = {
   findAllProfile,
   findProfileById,
@@ -28,5 +31,6 @@ module.exports = {
   updateProfile,
   handleFilm,
   handleFollower,
-  handleFollowing
+  handleFollowing,
+  handleChat,
 };

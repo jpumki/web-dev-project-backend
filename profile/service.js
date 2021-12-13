@@ -50,4 +50,13 @@ module.exports = (app) => {
       .then((status) => res.send(status));
   };
   app.put("/profile/:id/following", handleFollowing);
+
+
+  const handleChat = (req, res) => {
+    const updateProfile = req.body;
+    dao
+      .handleChat(req.params.id, updateProfile)
+      .then((status) => res.send(status));
+  };
+  app.put("/profile/:id/chat", handleChat);
 };

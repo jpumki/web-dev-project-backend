@@ -23,6 +23,7 @@ app.get("/", (req, res) => {
 });
 
 require("./profile/service")(app);
+require("./chat/service")(app);
 
 app.listen(process.env.PORT || 4000, function () {
   console.log("Listening on Port 4000");

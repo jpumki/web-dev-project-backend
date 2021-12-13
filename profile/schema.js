@@ -17,6 +17,7 @@ const schema = mongoose.Schema(
     followers: { type: Array, default: [] },
     followings: { type: Array, default: [] },
     movieList: { type: Array, default: [] },
+    chats: { type: Array, default: [] },
   },
   { collection: "profile", versionKey: false }
 );
